@@ -1,0 +1,2 @@
+{"token_type":"Bearer","scope":"profile openid email https://graph.microsoft.com/Mail.Read.All https://graph.microsoft.com/User.Read.All https://graph.microsoft.com/.default","expires_in":4909,"ext_expires_in":4909,
+    "access_token":""}

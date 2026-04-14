@@ -1,0 +1,17 @@
+#!/bin/bash
+#echo "enter begin_date: "
+#actoken=""
+
+
+auth_code=$1
+echo $auth_code
+
+curl --location --request POST 'https://login.microsoftonline.com/7app_id/oauth2/v2.0/token' \
+--header 'Content-Type: application/x-www-form-urlencoded' \
+--data 'client_id=cclient_id' \
+--data 'scope=https%3A%2F%2Fgraph.microsoft.com%2F.default' \
+--data 'code='${auth_code} \
+--data 'redirect_uri=http%3A%2F%2Flocalhost%3A5000' \
+--data 'grant_type=authorization_code' \
+--data 'client_secret=secret' \
+-o mstoken.json

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pipeline>
+  <info>
+    <name>setVariable_email_id</name>
+    <name_sync_with_filename>Y</name_sync_with_filename>
+    <description/>
+    <extended_description/>
+    <pipeline_version/>
+    <pipeline_type>Normal</pipeline_type>
+    <parameters>
+    </parameters>
+    <capture_transform_performance>N</capture_transform_performance>
+    <transform_performance_capturing_delay>1000</transform_performance_capturing_delay>
+    <transform_performance_capturing_size_limit>100</transform_performance_capturing_size_limit>
+    <created_user>-</created_user>
+    <created_date>2025/01/09 16:02:16.136</created_date>
+    <modified_user>-</modified_user>
+    <modified_date>2025/01/09 16:02:16.136</modified_date>
+  </info>
+  <notepads>
+  </notepads>
+  <order>
+    <hop>
+      <from>Get rows from result</from>
+      <to>Write to log-email_ids</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Write to log-email_ids</from>
+      <to>Set variables</to>
+      <enabled>Y</enabled>
+    </hop>
+  </order>
+  <transform>
+    <name>Get rows from result</name>
+    <type>RowsFromResult</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>email_id</name>
+        <type>String</type>
+        <length>1024</length>
+        <precision>-1</precision>
+      </field>
+    </fields>
+    <attributes/>
+    <GUI>
+      <xloc>160</xloc>
+      <yloc>96</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Set variables</name>
+    <type>SetVariable</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <field_name>email_id</field_name>
+        <variable_name>email_id</variable_name>
+        <variable_type>ROOT_WORKFLOW</variable_type>
+      </field>
+    </fields>
+    <use_formatting>Y</use_formatting>
+    <attributes/>
+    <GUI>
+      <xloc>496</xloc>
+      <yloc>96</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Write to log-email_ids</name>
+    <type>WriteToLog</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <displayHeader>Y</displayHeader>
+    <fields>
+      <field>
+        <name>email_id</name>
+      </field>
+    </fields>
+    <limitRows>N</limitRows>
+    <limitRowsNumber>0</limitRowsNumber>
+    <loglevel>Basic</loglevel>
+    <logmessage>=============================
+LOG 3 -
+
+EMAIL IDS -</logmessage>
+    <attributes/>
+    <GUI>
+      <xloc>336</xloc>
+      <yloc>96</yloc>
+    </GUI>
+  </transform>
+  <transform_error_handling>
+  </transform_error_handling>
+  <attributes/>
+</pipeline>
